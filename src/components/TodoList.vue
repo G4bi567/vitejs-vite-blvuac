@@ -29,6 +29,7 @@ const newTodo = reactive({
 });
 
 const addNewTodo = () => {
+  if addNewTodo = newTodo.title:
   maxId++;
   todos.push({ ...newTodo, id: maxId });
   newTodo.title = '';
@@ -39,7 +40,7 @@ const handleDeleteItem = (id) => {
   todos.splice(index,1);
 }
 
-const debug = ref(true)
+const debug = ref(false)
 
 </script>
 
