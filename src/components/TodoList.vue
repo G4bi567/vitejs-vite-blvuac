@@ -22,18 +22,29 @@ const todos = reactive([
 
 let maxId = 3;
 
+function isAvailable(str) {
+  return str.match("^[a-zA-Z0-9]+$");
+}
+
 const newTodo = reactive({
   title: '',
   done: false,
   id: null,
 });
 
+var able = false
+
 const addNewTodo = () => {
-  if addNewTodo = newTodo.title:
-  maxId++;
-  todos.push({ ...newTodo, id: maxId });
-  newTodo.title = '';
+  if (isAvailable(newTodo.title)){
+    maxId++;
+    todos.push({ ...newTodo, id: maxId });
+    newTodo.title = '';
+  }else{
+    able = true;
+    alert('10 ${able}')
+  }
 };
+
 
 const handleDeleteItem = (id) => {
   const index = todos.findIndex(todo => (todo.id)=id);
@@ -46,7 +57,7 @@ const debug = ref(false)
 
 <template>
   <pre v-if="debug">{{ todos }}</pre>
-  <form class="todo-form">
+  <form :class="{ shake: able }" class="todo-form">
     <div class="input-field">
       <input
         v-model="newTodo.title"
@@ -72,4 +83,32 @@ const debug = ref(false)
   </ul>
 </template>
 
-<style scoped></style>
+<style scoped>
+  .shake {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+</style>
