@@ -32,7 +32,7 @@ const newTodo = reactive({
   id: null,
 });
 
-var able = false
+var able = ref(false)
 
 const addNewTodo = () => {
   if (isAvailable(newTodo.title)){
@@ -40,8 +40,8 @@ const addNewTodo = () => {
     todos.push({ ...newTodo, id: maxId });
     newTodo.title = '';
   }else{
-    able = true;
-    alert('10 ${able}')
+    var able = ref(true);
+    alert('bonjour')
   }
 };
 
@@ -56,6 +56,7 @@ const debug = ref(false)
 </script>
 
 <template>
+<pre>{{ able }}</pre>
   <pre v-if="debug">{{ todos }}</pre>
   <form :class="{ shake: able }" class="todo-form">
     <div class="input-field">
