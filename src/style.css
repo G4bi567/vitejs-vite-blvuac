@@ -88,9 +88,6 @@ body {
   transition: 0.3s;
 }
 
-.input-strike{
-  
-}
 
 .input:focus {
   border-bottom: 3px solid white;
@@ -125,10 +122,14 @@ body {
   transition: 0.3s;
 }
 
+.strike{
+  text-decoration: line-through;
+}
 .button:hover {
   cursor: pointer;
   filter: brightness(0.7);
 }
+
 
 .button--todo {
   color: #ddd;

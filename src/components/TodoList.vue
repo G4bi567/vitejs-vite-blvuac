@@ -32,7 +32,7 @@ const newTodo = reactive({
   id: null,
 });
 
-var able = ref(false)
+const able = ref(false)
 
 const addNewTodo = () => {
   if (isAvailable(newTodo.title)){
@@ -40,8 +40,8 @@ const addNewTodo = () => {
     todos.push({ ...newTodo, id: maxId });
     newTodo.title = '';
   }else{
-    var able = ref(true);
-    alert('bonjour')
+    alert('bonjour');
+    able = true;
   }
 };
 

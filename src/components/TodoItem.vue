@@ -20,7 +20,7 @@ const enterViewMode = (event) => {
 </script>
 
 <template>
-  <span class="todo-collection__item__title" v-show="mode === 'view'"
+  <span class="todo-collection__item__title" :class="{ strike:!todo.done }" v-show="mode === 'view'"
     >{{ todo.title }}
   </span>
   <input
