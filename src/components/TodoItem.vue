@@ -26,6 +26,7 @@ const enterViewMode = (event) => {
   <input
     class="input input--todo"
     type="text"
+    v-model="todo.title"
     v-show="mode === 'edit'"
   /><button
     class="button button--todo button--edit"
