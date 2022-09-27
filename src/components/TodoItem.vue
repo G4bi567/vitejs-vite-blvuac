@@ -9,6 +9,7 @@ const mode = ref('view');
 
 const enterEditMode = (event) => {
   mode.value = 'edit';
+  Editinputfocus()
 };
 
 const enterViewMode = (event) => {
@@ -16,6 +17,11 @@ const enterViewMode = (event) => {
 
 };
 
+const Editinputfocus = (event) => {
+  alert("bonjour")
+  this.$refs.editinput.focus()
+  alert("bo")
+}
 
 </script>
 
@@ -27,6 +33,7 @@ const enterViewMode = (event) => {
     class="input input--todo"
     type="text"
     v-model="todo.title"
+    ref="editinput"
     v-show="mode === 'edit'"
   /><button
     class="button button--todo button--edit"

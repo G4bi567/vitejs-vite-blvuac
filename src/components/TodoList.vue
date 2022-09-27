@@ -37,7 +37,7 @@ const able = ref(false)
 const addNewTodo = () => {
   if (isAvailable(newTodo.title)){
     maxId++;
-    todos.push({ ...newTodo, id: maxId });
+    todos.push({ ...newTodo,done:true,id: maxId });
     newTodo.title = '';
   }else{
     alert('bonjour');
@@ -51,7 +51,7 @@ const handleDeleteItem = (id) => {
   todos.splice(index,1);
 }
 
-const debug = ref(false)
+const debug = ref(true)
 
 </script>
 
